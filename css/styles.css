@@ -1,3 +1,5 @@
+/*  Reset & Base Styles */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -24,8 +26,13 @@ p, ul, figure {
     margin-bottom: 1rem;
 }
 
+/* Bring back the list indent removed by the reset */
+main ul {
+    padding-left: 1.5rem;
+}
 
-/*    Navigation & Header (Flexbox)     */
+
+/*  Navigation & Header (Flexbox) */
 
 header {
     background-color: #0f2044;
@@ -46,4 +53,179 @@ header nav a {
     color: #ffcc00;
     text-decoration: none;
     font-weight: bold;
+}
+
+header nav a:hover,
+header nav a:focus {
+    text-decoration: underline;
+}
+
+
+/* Home Page: Hero & About */
+
+#hero, #about {
+    padding: 3rem 2rem;
+}
+
+#hero {
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+#hero img {
+    margin: 2rem auto 0;
+    border-radius: 8px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #0f2044;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.button:hover,
+.button:focus {
+    background-color: #1d3a7a;
+}
+
+
+/* Home Page: Events (CSS Grid)  */
+
+#events {
+    padding: 2rem;
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile-first: single column */
+    grid-auto-flow: dense;      /* Fill empty cells left by wide cards */
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.event-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    background-color: #fff;
+}
+
+.event-card img {
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+
+/* Featured Event Page  */
+
+.event-page {
+    padding: 2rem;
+}
+
+.event-intro .intro-desc {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+
+/* CSS Grid: main content and sidebar */
+
+.content-grid-wrapper {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile-first: stacked */
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.sidebar {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Flexbox: related events */
+.related-events h2 {
+    margin-bottom: 1rem;
+}
+
+.flex-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.compact-card {
+    flex: 1 1 250px;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+
+/*  Footer (Flexbox)  */
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+}
+
+footer a {
+    color: #ffcc00;
+}
+
+footer a:hover,
+footer a:focus {
+    color: #fff;
+}
+
+footer nav {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+
+/*  Media Queries (Responsive Design) */
+
+/* Tablet and up */
+@media (min-width: 768px) {
+    /* Event page: content and sidebar side by side */
+    .content-grid-wrapper {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    /* Home page: 2 columns */
+    .event-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Featured card spans two columns */
+    .card-wide {
+        grid-column: span 2;
+    }
+}
+
+/* Large desktop */
+@media (min-width: 1024px) {
+    /* Home page: 3 columns */
+    .event-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
