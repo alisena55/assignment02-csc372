@@ -201,6 +201,12 @@ footer nav {
     margin-top: 1rem;
 }
 
+.save-btn {
+    display: block;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+}
 
 /*  Media Queries (Responsive Design) */
 
