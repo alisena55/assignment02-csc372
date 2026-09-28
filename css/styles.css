@@ -221,6 +221,22 @@ footer nav {
     outline: 2px solid #0f2044;
 }
 
+/* Saved Events summary (home page) */
+#saved-events {
+    padding: 2rem;
+    background-color: #f4f4f4;
+    border-top: 3px solid #ffcc00;
+}
+
+#saved-list li {
+    margin-bottom: 0.5rem;
+}
+
+/*  hide the "no events" message */
+.is-hidden {
+    display: none;
+}
+
 /*  Media Queries (Responsive Design) */
 
 /* Tablet and up */
