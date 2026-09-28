@@ -201,11 +201,24 @@ footer nav {
     margin-top: 1rem;
 }
 
+/* JS edit start:*/
 .save-btn {
     display: block;
     border: none;
     cursor: pointer;
     font: inherit;
+}
+/* Highlight a saved card */
+.event-card.saved {
+    border: 3px solid #ffcc00;
+    background-color: #fffbe6;
+}
+
+/* Saved card's button flips to an outlined style */
+.event-card.saved .save-btn {
+    background-color: #fff;
+    color: #0f2044;
+    outline: 2px solid #0f2044;
 }
 
 /*  Media Queries (Responsive Design) */
